@@ -1,0 +1,15 @@
+'Judul DATABASE'
+CREATE DATABASE hotel_reservation;
+
+'Menggunakan DATABASE'
+USE hotel_reservation;
+
+CREATE TABLE reservations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    guest_name VARCHAR(100) NOT NULL,
+    check_in DATE NOT NULL,
+    check_out DATE NOT NULL,  
+    room_type ENUM('Standard', 'Deluxe', 'Suite', 'Presidential') NOT NULL,
+    status ENUM('Pending', 'Confirmed', 'Checked-In', 'Checked-Out', 'Cancelled') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
